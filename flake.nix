@@ -12,6 +12,13 @@
       system:
       let
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+        
+
+    env = {
+        TRUST_REMOTE_CODE=true;
+    };
+
+
       in
       {
         devShell = pkgs.mkShell {
